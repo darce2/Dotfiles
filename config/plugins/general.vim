@@ -7,6 +7,7 @@ call plug#begin('~/.vim/autoload/plugged')
 
 " Plug 'bling/vim-airline'                  " Status bar
 " Plug 'mkitt/tabline.vim'                  " Displays window tabs
+Plug 'w0rp/ale'                           " async linting 
 Plug 'Townk/vim-autoclose'                " Automatically closes parenthesis and quores
 Plug 'docunext/closetag.vim'              " Closes html tags when I type </
 Plug 'scrooloose/nerdtree'                " File explorer
@@ -17,10 +18,9 @@ Plug 'tpope/vim-surround'                 " Allows easy surrounding of words and
 " Plug 'simeji/winresizer'                  " Easy window resizing
 " Plug 'vim-scripts/RangeMacro'             " Easily applies macro to a range of lines
 " Plug 'SirVer/ultisnips'                   " Gotta love your snippets
-Plug 'neomake/neomake'                    " Async job handling (for linters, replaces Syntastic)
 " Plug 'vim-airline/vim-airline-themes'     " Adds a directory of Airline Themes
 " Plug 'honza/vim-snippets'                 " more snippets
-Plug 'vim-syntastic/syntastic'            " Google-friendly syntax linter
+" Plug 'vim-syntastic/syntastic'            " Google-friendly syntax linter
 " Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' }
  Plug 'bluz71/vim-moonfly-colors'          " a colorscheme
 " Plug 'mbbill/undotree'                     " A plugin for visualizing VIM's undo/redo tree
