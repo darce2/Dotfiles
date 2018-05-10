@@ -9,7 +9,7 @@ call plug#begin('~/.vim/autoload/plugged')
 " Plug 'mkitt/tabline.vim'                  " Displays window tabs
 Plug 'w0rp/ale'                           " async linting 
 Plug 'Townk/vim-autoclose'                " Automatically closes parenthesis and quores
-Plug 'docunext/closetag.vim'              " Closes html tags when I type </
+Plug 'alvan/vim-closetag'                   " Automatically closes html tags on >
 Plug 'scrooloose/nerdtree'                " File explorer
 " Plug 'scrooloose/nerdcommenter'           " Easy commenting and uncommenting
 Plug 'tpope/vim-fugitive'                 " Git integration
