@@ -1,3 +1,5 @@
+" dont understand this file but i like the colors so leaving for now
+
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 " Tell Vim which characters to show for expanded TABs,
