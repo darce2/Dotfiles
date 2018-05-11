@@ -23,8 +23,8 @@ syntax on                                       " Turns on syntax highlighting
 
 set clipboard=unnamed                           " allows me to copy and past outside of terminal
 
-"let mapleader = "\<space>"                      " asign leader to the space key
-"let localleader = "\\"                          " assign local leader to \ key
+let mapleader = "\<space>"                      " asign leader to the space key
+let localleader = "\\"                          " assign local leader to \ key
 
 " resize panes
 "nnoremap <silent> <Leader>+ :resize +5 <CR>

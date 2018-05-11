@@ -11,7 +11,7 @@ Plug 'w0rp/ale'                           " async linting
 Plug 'Townk/vim-autoclose'                " Automatically closes parenthesis and quores
 Plug 'alvan/vim-closetag'                   " Automatically closes html tags on >
 Plug 'scrooloose/nerdtree'                " File explorer
-" Plug 'scrooloose/nerdcommenter'           " Easy commenting and uncommenting
+Plug 'scrooloose/nerdcommenter'           " Easy commenting and uncommenting
 Plug 'tpope/vim-fugitive'                 " Git integration
 Plug 'tpope/vim-surround'                 " Allows easy surrounding of words and text in quotes and such
 " Plug 'godlygeek/tabular'                  " Don't know what this is or how it got here
