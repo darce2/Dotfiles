@@ -1,9 +1,9 @@
 set relativenumber                      " enables relative number
 set number                              " shows the number of current line
 set autoindent                          " automatically indents
-set softtabstop=2                       " sets default tab stop to 2
-set tabstop=2                           " sets default tab stop to 2
-set shiftwidth=2                        " the number of spaces inserted for a tab
+set softtabstop=4                       " sets default tab stop to 2
+set tabstop=4                           " sets default tab stop to 2
+set shiftwidth=4                        " the number of spaces inserted for a tab
 set expandtab                           " expands tabs to spaces
 set tw=0                                " width of the document (used by GD)
 set nowrap                              " don't automatically wrap on load

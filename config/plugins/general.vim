@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree'                " File explorer
 Plug 'scrooloose/nerdcommenter'           " Easy commenting and uncommenting
 Plug 'tpope/vim-fugitive'                 " Git integration
 Plug 'tpope/vim-surround'                 " Allows easy surrounding of words and text in quotes and such
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " Auto completion async
 " Plug 'godlygeek/tabular'                  " Don't know what this is or how it got here
 " Plug 'simeji/winresizer'                  " Easy window resizing
 " Plug 'vim-scripts/RangeMacro'             " Easily applies macro to a range of lines
