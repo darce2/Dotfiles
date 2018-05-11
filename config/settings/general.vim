@@ -18,6 +18,7 @@ set incsearch                           " searches while typing
 
 
 filetype indent on                              " Not sure what this does
+filetype plugin on                              " used for nerdcommentor to load plugins for specific file types
 syntax on                                       " Turns on syntax highlighting
 "autocmd! bufwritepost *.vim source %         " Auto reloads my vimrc on write
 

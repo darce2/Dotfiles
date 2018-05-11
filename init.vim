@@ -10,6 +10,7 @@ source ~/.config/nvim/config/settings/general.vim
 " plugin specific settings
 " source ~/.config/nvim/config/plugin_settings/syntastic.vim
 source ~/.config/nvim/config/plugin_settings/ale.vim
+source ~/.config/nvim/config/plugin_settings/nerdCommenter.vim
 
 
 " file specific
