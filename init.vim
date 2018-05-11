@@ -11,6 +11,7 @@ source ~/.config/nvim/config/settings/general.vim
 " source ~/.config/nvim/config/plugin_settings/syntastic.vim
 source ~/.config/nvim/config/plugin_settings/ale.vim
 source ~/.config/nvim/config/plugin_settings/nerdCommenter.vim
+source ~/.config/nvim/config/plugin_settings/nerdTree.vim
 
 
 " file specific
