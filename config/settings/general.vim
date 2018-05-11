@@ -64,7 +64,7 @@ nnoremap <C-H> <C-W><C-H>
 
 " File exploring shortcuts
 " nnoremap <Leader>ft  :tabnew<cr>:find \c
-" nnoremap <Leader>f<space>  :NERDTreeToggle<cr>
+nnoremap <Leader>f<space>  :NERDTreeToggle<cr>
 " nnoremap <Leader>ff  :find \c
 " nnoremap <Leader>fb  :ls<CR>:b
 " nnoremap <Leader>fs  :vsplit<CR>:find \c
