@@ -20,7 +20,7 @@ set incsearch                           " searches while typing
 filetype indent on                              " Not sure what this does
 filetype plugin on                              " used for nerdcommentor to load plugins for specific file types
 syntax on                                       " Turns on syntax highlighting
-"autocmd! bufwritepost *.vim source %         " Auto reloads my vimrc on write
+autocmd! bufwritepost *.vim source %         " Auto reloads my vimrc on write
 
 set clipboard=unnamed                           " allows me to copy and past outside of terminal
 
@@ -28,9 +28,9 @@ let mapleader = "\<space>"                      " asign leader to the space key
 let localleader = "\\"                          " assign local leader to \ key
 
 " resize panes
-"nnoremap <silent> <Leader>+ :resize +5 <CR>
-"nnoremap <silent> <Leader>= :resize -5 <CR>
-"nnoremap <leader>fk :FZF <CR>
+noremap <silent> <Leader>+ :vertical resize +5 <CR>
+noremap <silent> <Leader>= :vertical resize -5 <CR>
+" noremap <leader>fk :FZF <CR>
 
 " move between tabs with, N or P ( left and right respectively)
 "map <C-n> <esc>:tabnext<CR>
@@ -51,6 +51,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 
 " File exploring settings
