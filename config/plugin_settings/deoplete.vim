@@ -1,15 +1,15 @@
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#sources={}
-let g:deoplete#sources._=['buffer', 'file', 'ultisnips', 'ternjs']
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.javascript = [
-  \ 'tern#Complete',
-  \ 'jspc#omni'
-  \]
-let g:deoplete#sources#ternjs#filetypes = [
-                \ 'jsx',
-                \ 'javascript.jsx'
-                \ ]
+" let g:deoplete#sources={}
+" let g:deoplete#sources._=['buffer', 'file', 'ultisnips', 'ternjs']
+" let g:deoplete#omni#functions = {}
+" let g:deoplete#omni#functions.javascript = [
+  " \ 'tern#Complete',
+  " \ 'jspc#omni'
+  " \]
+" let g:deoplete#sources#ternjs#filetypes = [
+                " \ 'jsx',
+                " \ 'javascript.jsx'
+                " \ ]
 
 " Whether to include the types of the completions in the result data. Default: 0
 let g:deoplete#sources#ternjs#types = 1
