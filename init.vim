@@ -13,6 +13,7 @@ source ~/.config/nvim/config/plugin_settings/ale.vim
 source ~/.config/nvim/config/plugin_settings/nerdCommenter.vim
 source ~/.config/nvim/config/plugin_settings/nerdTree.vim
 source ~/.config/nvim/config/plugin_settings/deoplete.vim
+source ~/.config/nvim/config/plugin_settings/closetag.vim
 
 
 " file specific
