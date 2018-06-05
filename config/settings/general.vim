@@ -40,8 +40,8 @@ noremap <silent> <Leader>= :vertical resize -5 <CR>
 "vnoremap <Leader>a :sort<CR>
 
 " Easy shifting
-"vnoremap < <gv
-"vnoremap > >gv
+vnoremap < <gv
+vnoremap > >gv
 
 " unhighlights works
 "nnoremap <CR> :noh <cr>
