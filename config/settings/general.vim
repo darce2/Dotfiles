@@ -55,6 +55,8 @@ nnoremap <C-H> <C-W><C-H>
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+" Autosave 
+inoremap <esc> <esc>:w<cr>
 
 " File exploring settings
 "set hidden
