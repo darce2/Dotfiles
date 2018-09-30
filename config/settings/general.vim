@@ -8,13 +8,15 @@ set expandtab                           " expands tabs to spaces
 set tw=0                                " width of the document (used by GD)
 set nowrap                              " don't automatically wrap on load
 set fo-=t                               " don't automatically wrap text when typing
-"set colorcolumn=80                      " colors 80th collumn
-"set ignorecase                          " ignore case in search
-"set smartcase                           " becomes case sensitive once you use a case
+set colorcolumn=80                      " colors 80th collumn
+set ignorecase                          " ignore case in search
+set smartcase                           " becomes case sensitive once you use a case
 set hlsearch                            " highlights search
 set incsearch                           " searches while typing
 "set foldmethod=indent                   " fold code based on indenting level
 "set foldlevel=0                         " sets foldlevel to 0, all folds closed
+set autoread                            " updates if file on disk updates from external source
+
 
 
 filetype indent on                              " Not sure what this does
@@ -59,13 +61,13 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <esc> <esc>:w<cr>
 
 " File exploring settings
-"set hidden
-"set path+=**
-"set path-=**/node_modules/*
-"set wildmenu
-"set wildignore+=**/node_modules/*
-"set wildignore+=**/lib/*
-"set wildignore+=**/coverage/*
+set hidden                                      "instead of closing unsave buf on file open :ls :b[N]
+set path+=**
+set path-=**/node_modules/*
+set wildmenu
+set wildignore+=**/node_modules/*
+set wildignore+=**/lib/*
+set wildignore+=**/coverage/*
 
 " File exploring shortcuts
 " nnoremap <Leader>ft  :tabnew<cr>:find \c

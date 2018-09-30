@@ -1,19 +1,11 @@
 let g:deoplete#enable_at_startup = 1
-" let g:deoplete#sources={}
-" let g:deoplete#sources._=['buffer', 'file', 'ultisnips', 'ternjs']
-" let g:deoplete#omni#functions = {}
-" let g:deoplete#omni#functions.javascript = [
-  " \ 'tern#Complete',
-  " \ 'jspc#omni'
-  " \]
-" let g:deoplete#sources#ternjs#filetypes = [
-                " \ 'jsx',
-                " \ 'javascript.jsx'
-                " \ ]
+"
+" neosnippet
+let g:neosnippet#enable_completed_snippet = 1
+
 
 " Whether to include the types of the completions in the result data. Default: 0
 let g:deoplete#sources#ternjs#types = 1
-
 
 " Whether to include the distance (in scopes for variables, in prototypes for 
 " properties) between the completions and the origin position in the result 
