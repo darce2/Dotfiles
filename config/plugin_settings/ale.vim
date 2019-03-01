@@ -1,8 +1,10 @@
 " define ale fixers
 let g:ale_fixers = {                                                    
-\   'javascript': ['eslint', 'prettier', 'prettier-eslint']                
+\   'javascript': ['eslint', 'prettier', 'prettier-eslint'],
+\   'typescript': ['eslint','prettier', 'tslint']
 \}
 let g:ale_fix_on_save=0                                                 " disable lint on save 
+let g:ale_completion_enabled=1                                          " enable completiong where available
 let g:ale_completion_enabled=1                                          " enable completiong where available
 
 " <8> will run ALEFix 
