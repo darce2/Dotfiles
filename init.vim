@@ -7,6 +7,7 @@
 source ~/.config/nvim/config/plugins/general.vim
 source ~/.config/nvim/config/settings/general.vim
 source ~/.config/nvim/config/settings/colorschemes.vim
+source ~/.config/nvim/config/settings/functions.vim
 
 " plugin specific settings
 source ~/.config/nvim/config/plugin_settings/ale.vim
