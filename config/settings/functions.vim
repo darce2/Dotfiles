@@ -5,7 +5,7 @@ function! Clean()
   let c = col('.')
   %s/\t/\ \ /ge
   %s/\s\+$//e
-  %s/{\(.\{-}\)}/{ \1 }/g|%s/{  /{ /g|%s/  }/ }/ge
+  %s/{\(.\{-}\)}/{ \1 }/ge|%s/{  \(.\{-}\)}/{ \1}/ge|%s/{\(.\{-}\)  }/{\1 }/ge|%s/{ }/{}/ge
   let @/=_s
   call cursor(l, c)
   set ff=unix
