@@ -18,5 +18,5 @@ source ~/.config/nvim/config/plugin_settings/closetag.vim
 
 " file specific
 " autocmd FileType css source ~/.config/nvim/config/settings/css.vim
-" autocmd FileType html source ~/.config/nvim/config/settings/html.vim
+autocmd FileType html source ~/.config/nvim/config/settings/html.vim
 
