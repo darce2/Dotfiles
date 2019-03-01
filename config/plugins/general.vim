@@ -22,19 +22,19 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " Auto completio
 " Plug 'vim-airline/vim-airline-themes'     " Adds a directory of Airline Themes
 " Plug 'honza/vim-snippets'                 " more snippets
 " Plug 'vim-syntastic/syntastic'            " Google-friendly syntax linter
-" Plug 'junegunn/fzf',  { 'dir': '~/.fzf', 'do': './install --all' }
- Plug 'bluz71/vim-moonfly-colors'          " a colorscheme
-" Plug 'mbbill/undotree'                     " A plugin for visualizing VIM's undo/redo tree
+" Plug 'junegunn/fzf',  { 'dir': '~/.fzf',  'do': './install --all' }
+" Plug 'bluz71/vim-moonfly-colors'           " a colorscheme
+Plug 'morhetz/gruvbox'                     " a colorscheme
+
+" Plug 'mbbill/undotree'                    " A plugin for visualizing VIM's undo/redo tree
 " Plug 'pseewald/vim-anyfold'
 
 
 " language specif plugins
-" source ~/.config/nvim/config/plugins/java.vim
 source ~/.config/nvim/config/plugins/javascript.vim
-" source ~/.config/nvim/config/plugins/python.vim
+source ~/.config/nvim/config/plugins/typescript.vim
 " source ~/.config/nvim/config/plugins/markdown.vim
-" source ~/.config/nvim/config/plugins/elixir.vim
-" source ~/.config/nvim/config/plugins/solidity.vim
+
 
 " function! DoRemote(arg)
 " UpdateRemotePlugins

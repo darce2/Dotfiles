@@ -95,9 +95,7 @@ nnoremap <Leader>f<space>  :NERDTreeToggle<cr>
 " onoremap ip( :<C-u>normal! F)vi(<cr>
 
 
-" sets colorscheme and uses true colros
-colorscheme moonfly
-set termguicolors
 
 set undofile " Maintain undo history between sessions
 set undodir=~/.undo
+
