@@ -16,7 +16,8 @@ set incsearch                           " searches while typing
 "set foldmethod=indent                   " fold code based on indenting level
 "set foldlevel=0                         " sets foldlevel to 0, all folds closed
 set autoread                            " updates if file on disk updates from external source
-
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
 
 filetype indent on                              " Not sure what this does
@@ -39,7 +40,7 @@ noremap <silent> <Leader>= :vertical resize -5 <CR>
 "map <C-p> <esc>:tabprevious<CR>
 
 " Alphabetically sort lines of code in visual mode
-"vnoremap <Leader>a :sort<CR>
+vnoremap <Leader>a :sort<CR>
 
 " Easy shifting
 vnoremap < <gv
@@ -58,7 +59,7 @@ nnoremap <C-H> <C-W><C-H>
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Autosave 
-inoremap <esc> <esc>:w<cr>
+" inoremap <esc> <esc>:w<cr>
 
 " File exploring settings
 set hidden                                      "instead of closing unsave buf on file open :ls :b[N]
@@ -72,8 +73,8 @@ set wildignore+=**/coverage/*
 " File exploring shortcuts
 " nnoremap <Leader>ft  :tabnew<cr>:find \c
 nnoremap <Leader>f<space>  :NERDTreeToggle<cr>
-" nnoremap <Leader>ff  :find \c
-" nnoremap <Leader>fb  :ls<CR>:b
+nnoremap <Leader>ff  :find \c
+nnoremap <Leader>fb  :ls<CR>:b
 " nnoremap <Leader>fs  :vsplit<CR>:find \c
 " nnoremap <Leader>fi  :split<CR>:find \c
 " nnoremap <Leader>fv  :find ~/.config/nvim/config/settings/general.vim<CR>
