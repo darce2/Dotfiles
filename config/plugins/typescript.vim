@@ -1,2 +1,6 @@
-Plug 'leafgarland/typescript-vim'                                   "TS Highlighting 
-Plug 'maxmellon/vim-jsx-pretty'                                     "TS TSX pretty
+" Typescript syntax highlighting
+Plug 'HerringtonDarkholme/yats.vim'
+
+" Syntax highlighting for JSX in Typescript.
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'

@@ -13,11 +13,16 @@ set ignorecase                          " ignore case in search
 set smartcase                           " becomes case sensitive once you use a case
 set hlsearch                            " highlights search
 set incsearch                           " searches while typing
-"set foldmethod=indent                   " fold code based on indenting level
-"set foldlevel=0                         " sets foldlevel to 0, all folds closed
+set foldmethod=indent                   " fold code based on indenting level
+set foldlevel=0                         " sets foldlevel to 0, all folds closed
 set autoread                            " updates if file on disk updates from external source
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible                        " be iMproved, required
+filetype off                            " required
+
+" Delete current visual selection and dump in black hole buffer before pasting
+" Used when you want to paste over something without it getting copied to
+" Vim's default buffer
+vnoremap <leader>p "_dP                
 
 
 filetype indent on                              " Not sure what this does
@@ -33,11 +38,11 @@ let localleader = "\\"                          " assign local leader to \ key
 " resize panes
 noremap <silent> <Leader>+ :vertical resize +5 <CR>
 noremap <silent> <Leader>= :vertical resize -5 <CR>
-" noremap <leader>fk :FZF <CR>
+noremap <leader>fk :FZF <CR>
 
 " move between tabs with, N or P ( left and right respectively)
-"map <C-n> <esc>:tabnext<CR>
-"map <C-p> <esc>:tabprevious<CR>
+map <C-n> <esc>:tabnext<CR>
+map <C-p> <esc>:tabprevious<CR>
 
 " Alphabetically sort lines of code in visual mode
 vnoremap <Leader>a :sort<CR>
@@ -46,17 +51,11 @@ vnoremap <Leader>a :sort<CR>
 vnoremap < <gv
 vnoremap > >gv
 
-" unhighlights works
-"nnoremap <CR> :noh <cr>
-
 " move between pane using control keys and H,J,K,L
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Autosave 
 " inoremap <esc> <esc>:w<cr>
@@ -72,9 +71,8 @@ set wildignore+=**/coverage/*
 
 " File exploring shortcuts
 " nnoremap <Leader>ft  :tabnew<cr>:find \c
-nnoremap <Leader>f<space>  :NERDTreeToggle<cr>
-nnoremap <Leader>ff  :find \c
-nnoremap <Leader>fb  :ls<CR>:b
+" nnoremap <Leader>ff  :find \c
+" nnoremap <Leader>fb  :ls<CR>:b
 " nnoremap <Leader>fs  :vsplit<CR>:find \c
 " nnoremap <Leader>fi  :split<CR>:find \c
 " nnoremap <Leader>fv  :find ~/.config/nvim/config/settings/general.vim<CR>
