@@ -17,7 +17,8 @@ try
 " Use ag silver searcher for searching current directory for files
 " By default, ag will respect rules in .gitignore
 "
-call denite#custom#var('file/rec', 'command', ['ag'])
+call denite#custom#var('file/rec', 'command',
+\ ['ag', '--follow', '--nocolor', '--nogroup', '-g', ''])
 
 " Use ag in place of "grep"
 call denite#custom#var('grep', 'command', ['ag'])

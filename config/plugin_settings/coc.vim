@@ -17,3 +17,6 @@ nmap <silent> <leader>dd <Plug>(coc-definition)
 nmap <silent> <leader>dr <Plug>(coc-references)
 nmap <silent> <leader>dj <Plug>(coc-implementation)
 nmap <silent> <leader>8 <Plug>(coc-codeaction)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
