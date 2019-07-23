@@ -3,11 +3,13 @@ call plug#begin('~/.vim/autoload/plugged')
 " Plug 'Townk/vim-autoclose'                " Automatically closes parenthesis and quores
 " Plug 'tpope/vim-surround'                 " Allows easy surrounding of words and text in quotes and such
 " Plug 'alvan/vim-closetag'                   " Automatically closes html tags on >
-" Plug 'tpope/vim-fugitive'                 " Git integration
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " Auto completion async
 " Plug 'w0rp/ale'                           " async linting
 " Plug 'mbbill/undotree'                    " A plugin for visualizing VIM's undo/redo tree
 " Plug 'pseewald/vim-anyfold'
+
+" Git support
+Plug 'tpope/vim-fugitive'                 " Git integration
 
 " Snippet support
 Plug 'Shougo/neosnippet'
