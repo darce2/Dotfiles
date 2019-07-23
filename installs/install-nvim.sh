@@ -9,6 +9,7 @@ if [ $(uname -s) = 'Darwin' ]; then
     pip2 install --user neovim
     pip3 install --user neovim
     sudo gem install neovim
+    npm install -g neovim
   else
     echo "still no desktop"
   fi
