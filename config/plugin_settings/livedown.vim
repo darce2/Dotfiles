@@ -1,5 +1,6 @@
 
-nmap gm :LivedownToggle<CR>
+nmap gms :LivedownPreview<CR>
+nmap gmk :LivedownKill<CR>
 
 " should markdown preview get shown automatically upon opening markdown buffer
 let g:livedown_autorun = 0
