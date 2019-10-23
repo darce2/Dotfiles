@@ -43,15 +43,7 @@ try
 "   --hidden:   Search hidden directories and files
 "   --heading:  Show the file name above clusters of matches from each file
 " call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading'])
-
-" Recommended defaults for ag via Denite docs
-call denite#custom#var('grep', 'command', ['ag'])
-call denite#custom#var('grep', 'default_opts', ['-i', '--vimgrep'])
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', [])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
-
+"
 " Remove date from buffer list
 " call denite#custom#var('buffer', 'date_format', '')
 
