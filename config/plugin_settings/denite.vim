@@ -8,7 +8,7 @@
 nmap ; :Denite buffer -split=floating<CR>
 nmap <leader>t :Denite file/rec -split=floating<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty -split=floating<CR>
-nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -split=floatgin<CR>
+nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -split=floating<CR>
 
 " === Denite setup ==="
 try

@@ -9,10 +9,10 @@ call plug#begin('~/.vim/autoload/plugged')
 " Plug 'pseewald/vim-anyfold'
 
 " Git support
-Plug 'tpope/vim-fugitive'                 " Git integration
+Plug 'tpope/vim-fugitive'
 "
 " Markdown support
-Plug 'shime/vim-livedown'                 " Git integration
+Plug 'shime/vim-livedown'
 
 " Snippet support
 Plug 'Shougo/neosnippet'
