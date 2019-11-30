@@ -25,6 +25,10 @@ try
 	  \ denite#do_map('quit')
 	  nnoremap <silent><buffer><expr> i
 	  \ denite#do_map('open_filter_buffer')
+    nnoremap <silent><buffer><expr> <C-v>
+      \ denite#do_map('do_action', 'vsplit')
+    nnoremap <silent><buffer><expr> <C-x>
+          \ denite#do_map('do_action', 'split')
 	  nnoremap <silent><buffer><expr> <Space>
 	  \ denite#do_map('toggle_select').'j'
 	endfunction

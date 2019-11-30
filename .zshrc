@@ -8,12 +8,53 @@ export PATH=$PATH:~/Dotfiles/functions
 # Add ruby 
 export PATH=$PATH:$(ruby -e 'puts Gem.user_dir')/bin
 
-# Add Applications folder
-export PATH=$PATH:/home/arlen/Applications
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/${USER}/.oh-my-zsh"
+if [ $(uname -s) = 'Darwin' ]; then
+  # Add Applications folder
+  export PATH=$PATH:/Users/arlen/Applications
 
+  # Path to your oh-my-zsh installation.
+  export ZSH="/Users/${USER}/.oh-my-zsh"
+
+  autoload -Uz compinit
+  compinit
+  plugins=(
+    git
+    osx
+    npm
+    tmux
+    yarn
+  )
+else
+  # Add Applications folder
+  export PATH=$PATH:/home/arlen/Applications
+
+  # Path to your oh-my-zsh installation.
+  export ZSH="/home/${USER}/.oh-my-zsh"
+  # End of lines configured by zsh-newuser-install
+  # The following lines were added by compinstall
+  zstyle :compinstall filename '/home/arlen/.zshrc'
+
+  autoload -Uz compinit
+  compinit
+  # End of lines added by compinstall
+  #
+  export SUDO_EDITOR=nvim
+  plugins=(
+    git
+    archlinux
+    npm
+    python
+    systemd
+    tmux
+    yarn
+  )
+
+  ## launch sway on login, not sure if need to keep variable
+  if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+          XKB_DEFAULT_LAYOUT=us exec sway
+  fi
+fi
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -32,20 +73,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd extendedglob nomatch notify
 bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/arlen/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
-#
-export SUDO_EDITOR=nvim
-
-## launch sway on login, not sure if need to keep variable
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-        XKB_DEFAULT_LAYOUT=us exec sway
-fi
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
