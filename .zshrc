@@ -8,6 +8,11 @@ export PATH=$PATH:~/Dotfiles/functions
 # Add ruby 
 export PATH=$PATH:$(ruby -e 'puts Gem.user_dir')/bin
 
+# This loads nvm and completions
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  
+
 
 if [ $(uname -s) = 'Darwin' ]; then
   # Add Applications folder
