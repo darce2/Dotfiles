@@ -1,5 +1,4 @@
 " Arlen D'Arcy
-" arlenjdarcy@gmail.com
 " .vimrc
 
 " top leve settings module
