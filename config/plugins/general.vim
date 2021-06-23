@@ -25,7 +25,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 
 " Coc is an intellisense engine for vim8 & neovim.
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 " fuzzy file finder and buffer manager not sure if should stay
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }

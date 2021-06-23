@@ -5,5 +5,5 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
-  "eslint.nodePath": "./.vscode/pnpify/"
+  "eslint.nodePath": "./.vscode/pnpify"
 }
