@@ -29,7 +29,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 " fuzzy file finder and buffer manager not sure if should stay
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
