@@ -15,8 +15,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'shime/vim-livedown'
 
 " Snippet support
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+"Plug 'Shougo/neosnippet'
+"Plug 'Shougo/neosnippet-snippets'
 
 " File explorer
 Plug 'scrooloose/nerdtree'

@@ -2,3 +2,6 @@
 # tmux logs
 installs/tmux-server.*
 installs/tmux-client.*
+
+#osx
+.DS_Store
