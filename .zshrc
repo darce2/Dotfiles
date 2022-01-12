@@ -8,6 +8,14 @@ export PATH=$PATH:~/Dotfiles/functions
 # Add ruby 
 export PATH=$PATH:$(ruby -e 'puts Gem.user_dir')/bin
 
+## Divvy specific
+alias make=mmake
+
+## end divvy
+
+# direnv set up
+eval "$(direnv hook zsh)"
+
 # manage node versions
 eval "$(fnm env --use-on-cd)"
 

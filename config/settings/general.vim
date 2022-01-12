@@ -31,6 +31,7 @@ syntax on                                       " Turns on syntax highlighting
 autocmd! bufwritepost *.vim source %         " Auto reloads my vimrc on write
 
 set clipboard=unnamed                           " allows me to copy and past outside of terminal
+set termguicolors                               " set true color support
 
 let mapleader = "\<space>"                      " asign leader to the space key
 let localleader = "\\"                          " assign local leader to \ key

@@ -9,24 +9,27 @@ call plug#begin('~/.vim/autoload/plugged')
 " Plug 'pseewald/vim-anyfold'
 
 " Git support
-Plug 'tpope/vim-fugitive'
-"
-" Markdown support
-Plug 'shime/vim-livedown'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 
-" Snippet support
-"Plug 'Shougo/neosnippet'
-"Plug 'Shougo/neosnippet-snippets'
+
+" file finder and search
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+" needed for telescope
+Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'kyazdani42/nvim-web-devicons'
 
 " File explorer
 Plug 'scrooloose/nerdtree'
+
 
 " Easy commenting and uncommenting
 Plug 'scrooloose/nerdcommenter'
 
 " Coc is an intellisense engine for vim8 & neovim.
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " fuzzy file finder and buffer manager not sure if should stay
 " Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -40,8 +43,8 @@ Plug 'morhetz/gruvbox'
 
 
 " language specif plugins
-source ~/.config/nvim/config/plugins/javascript.vim
-source ~/.config/nvim/config/plugins/typescript.vim
+"source ~/.config/nvim/config/plugins/javascript.vim
+"source ~/.config/nvim/config/plugins/typescript.vim
 
 " required
 call plug#end()
