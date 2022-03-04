@@ -3,18 +3,16 @@ call plug#begin('~/.vim/autoload/plugged')
 " Plug 'Townk/vim-autoclose'                " Automatically closes parenthesis and quores
 " Plug 'tpope/vim-surround'                 " Allows easy surrounding of words and text in quotes and such
 " Plug 'alvan/vim-closetag'                   " Automatically closes html tags on >
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }   " Auto completion async
-" Plug 'w0rp/ale'                           " async linting
-" Plug 'mbbill/undotree'                    " A plugin for visualizing VIM's undo/redo tree
 " Plug 'pseewald/vim-anyfold'
 
-" Git support
+
+"lua support for neovim plugins
 Plug 'nvim-lua/plenary.nvim'
+
+" Git support
 Plug 'lewis6991/gitsigns.nvim'
 
-
 " file finder and search
-Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 " needed for telescope
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
@@ -24,15 +22,26 @@ Plug 'kyazdani42/nvim-web-devicons'
 " File explorer
 Plug 'scrooloose/nerdtree'
 
+" language server support config
+Plug 'neovim/nvim-lspconfig'
+" helper plugin to manage language servers
+Plug 'williamboman/nvim-lsp-installer'
+" autocompletion with lsp
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+" these are required
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+
+" handle references in a popup window
+Plug 'rmagatti/goto-preview'
+Plug 'wiliamks/nice-reference.nvim'
 
 " Easy commenting and uncommenting
 Plug 'scrooloose/nerdcommenter'
-
-" Coc is an intellisense engine for vim8 & neovim.
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" fuzzy file finder and buffer manager not sure if should stay
-" Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
@@ -41,10 +50,16 @@ Plug 'vim-airline/vim-airline-themes'
 " a colorscheme
 Plug 'morhetz/gruvbox'
 
+" help to learn what actions are available
+Plug 'folke/which-key.nvim'
 
-" language specif plugins
-"source ~/.config/nvim/config/plugins/javascript.vim
-"source ~/.config/nvim/config/plugins/typescript.vim
+" use folds for navigation
+" Plug 'anuvyklack/pretty-fold'
+
+
+""" language specific 
+"graphql syntax
+Plug 'jparise/vim-graphql'
 
 " required
 call plug#end()

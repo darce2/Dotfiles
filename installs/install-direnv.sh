@@ -1,3 +1,5 @@
 # https://direnv.net/docs/installation.html
-curl -sfL https://direnv.net/install.sh | bash
 
+if [ $(uname -s) = 'Darwin' ]; then
+  brew install direnv
+fi

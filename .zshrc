@@ -9,7 +9,9 @@ export PATH=$PATH:~/Dotfiles/functions
 export PATH=$PATH:$(ruby -e 'puts Gem.user_dir')/bin
 
 ## Divvy specific
+export PATH=$PATH:/Users/arlen/Library/Python/3.9/bin
 alias make=mmake
+# export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain divvydose --domain-owner 120043296445 --query authorizationToken --output text`
 
 ## end divvy
 
