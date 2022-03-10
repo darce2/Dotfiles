@@ -20,21 +20,32 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'kyazdani42/nvim-web-devicons'
 
 " File explorer
-Plug 'scrooloose/nerdtree'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
+" Plug 'scrooloose/nerdtree'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
 " language server support config
 Plug 'neovim/nvim-lspconfig'
 " helper plugin to manage language servers
 Plug 'williamboman/nvim-lsp-installer'
 " autocompletion with lsp
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-" these are required
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" 9000+ Snippets
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+" lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+" Need to **configure separately**
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+
+" previously used autocomplete --------
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/nvim-cmp'
+" " these are required
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
+" ----------
 
 " handle references in a popup window
 Plug 'rmagatti/goto-preview'

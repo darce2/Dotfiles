@@ -7,9 +7,6 @@ require('goto-preview').setup{}
 --niceReference = require('nice-reference')
 --niceReference.setup({})
 
-
-
-
 local lsp_installer = require("nvim-lsp-installer")
 local nvim_lsp = require("lspconfig")
 
@@ -69,79 +66,9 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
   buf_set_keymap('n', '<space>fl', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-
 end
 
--- Setup nvim-cmp.
-local cmp = require("cmp")
-
-cmp.setup({
-  snippet = {
-    -- REQUIRED - you must specify a snippet engine
-    expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-      -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-    end,
-  },
-  mapping = {
-    ['<Tab>'] = cmp.mapping(function(fallback)
-      -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
-      if cmp.visible() then
-          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-      else
-        fallback()
-      end
-    end, {"i","s","c",}),
-    ['<S-Tab>'] = cmp.mapping(function(fallback)
-      -- This little snippet will confirm with tab, and if no entry is selected, will confirm the first item
-      if cmp.visible() then
-          cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-      else
-        fallback()
-      end
-    end, {"i","s","c",}),
-    ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
----    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
----    ['<C-e>'] = cmp.mapping({
----      i = cmp.mapping.abort(),
----      c = cmp.mapping.close(),
----    }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
-    -- { name = 'ultisnips' }, -- For ultisnips users.
-    -- { name = 'snippy' }, -- For snippy users.
-  }, {
-    { name = 'buffer' },
-  })
-})
-
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-  sources = {
-    { name = 'buffer' }
-  }
-})
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
-
--- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
---- end nvim-cmp setup
-
+--]]
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 lsp_installer.on_server_ready(function(server)

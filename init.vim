@@ -10,12 +10,14 @@ source ~/.config/nvim/config/settings/functions.vim
 " plugin specific settings
 source ~/.config/nvim/config/plugin_settings/nerdCommenter.vim
 source ~/.config/nvim/config/plugin_settings/nerdTree.vim
+source ~/.config/nvim/config/plugin_settings/chadTree.vim
 source ~/.config/nvim/config/plugin_settings/gitsigns.vim
 source ~/.config/nvim/config/plugin_settings/telescope.vim
 source ~/.config/nvim/config/plugin_settings/lsp.vim
 source ~/.config/nvim/config/plugin_settings/which-key.vim
 " source ~/.config/nvim/config/plugin_settings/denite.vim
 " source ~/.config/nvim/config/plugin_settings/coc.vim
+source ~/.config/nvim/config/plugin_settings/coq.vim
 source ~/.config/nvim/config/plugin_settings/airline.vim
 " source ~/.config/nvim/config/plugin_settings/livedown.vim
 " source ~/.config/nvim/config/plugin_settings/deoplete.vim

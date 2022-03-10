@@ -1,3 +1,4 @@
+set encoding=UTF-8
 set relativenumber                      " enables relative number
 set number                              " shows the number of current line
 set autoindent                          " automatically indents
