@@ -32,7 +32,7 @@ eval "$(fnm env --use-on-cd)"
 
 if [ $(uname -s) = 'Darwin' ]; then
   # OSX:brew If you need to have ruby first in your PATH, run:
-  echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
+  export PATH="/usr/local/opt/ruby/bin:$PATH"
 
   # OSX:brew For compilers to find ruby you may need to set:
   export LDFLAGS="-L/usr/local/opt/ruby/lib"
@@ -187,11 +187,3 @@ source $ZSH/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"

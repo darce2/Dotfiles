@@ -5,7 +5,6 @@ call plug#begin('~/.vim/autoload/plugged')
 " Plug 'alvan/vim-closetag'                   " Automatically closes html tags on >
 " Plug 'pseewald/vim-anyfold'
 
-
 "lua support for neovim plugins
 Plug 'nvim-lua/plenary.nvim'
 
@@ -20,7 +19,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'kyazdani42/nvim-web-devicons'
 
 " File explorer
-" Plug 'scrooloose/nerdtree'
 Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
 " language server support config
@@ -62,10 +60,6 @@ Plug 'morhetz/gruvbox'
 
 " help to learn what actions are available
 Plug 'folke/which-key.nvim'
-
-" use folds for navigation
-" Plug 'anuvyklack/pretty-fold'
-
 
 """ language specific 
 "graphql syntax

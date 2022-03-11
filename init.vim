@@ -24,7 +24,6 @@ source ~/.config/nvim/config/plugin_settings/airline.vim
 " source ~/.config/nvim/config/plugin_settings/closetag.vim
 " source ~/.config/nvim/config/plugin_settings/ale.vim
 
-
 " file specific
 autocmd FileType css source ~/.config/nvim/config/settings/css.vim
 autocmd FileType html source ~/.config/nvim/config/settings/html.vim
