@@ -7,11 +7,20 @@ export PATH=$PATH:~/Dotfiles/functions
 
 # Add ruby 
 export PATH=$PATH:$(ruby -e 'puts Gem.user_dir')/bin
+export GEM_HOME="$HOME/.gem"
+
+
 
 ## Divvy specific
 export PATH=$PATH:/Users/arlen/Library/Python/3.9/bin
 alias make=mmake
 # export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain divvydose --domain-owner 120043296445 --query authorizationToken --output text`
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export WORKON_HOME=$HOME/.virtualenvs
+pyenv virtualenvwrapper_lazy
+
 
 ## end divvy
 
@@ -22,6 +31,16 @@ eval "$(direnv hook zsh)"
 eval "$(fnm env --use-on-cd)"
 
 if [ $(uname -s) = 'Darwin' ]; then
+  # OSX:brew If you need to have ruby first in your PATH, run:
+  echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
+
+  # OSX:brew For compilers to find ruby you may need to set:
+  export LDFLAGS="-L/usr/local/opt/ruby/lib"
+  export CPPFLAGS="-I/usr/local/opt/ruby/include"
+
+  # OSX:brew For pkg-config to find ruby you may need to set:
+  export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
+
   # Add Applications folder
   export PATH=$PATH:/Users/arlen/Applications
 
@@ -168,3 +187,11 @@ source $ZSH/oh-my-zsh.sh
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:$PATH"

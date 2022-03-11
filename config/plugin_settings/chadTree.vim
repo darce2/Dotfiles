@@ -14,5 +14,17 @@ let g:chadtree_settings = {
       \"options": {
         \"lang": "en",
         \"show_hidden": v:true,
+      \},
+      \"view": {
+        \"window_options": {
+          \"cursorline": v:true,
+          \"foldenable": v:false,
+          \"number": v:false,
+          \"relativenumber": v:false,
+          \"signcolumn": "no",
+          \"winfixwidth": v:false,
+          \"wrap": v:false,
+        \},
+      \},
     \}
-  \}
+
