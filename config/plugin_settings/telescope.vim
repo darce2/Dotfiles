@@ -9,6 +9,9 @@ require('telescope').setup{
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
+    file_ignore_patterns = {
+      ".git/*"
+    },
     mappings = {
       i = {
         -- map actions.which_key to <C-h> (default: <C-/>)
@@ -26,6 +29,9 @@ require('telescope').setup{
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+    find_files = {
+      hidden = true,
+    },
   },
   extensions = {
     -- Your extension configuration goes here:
