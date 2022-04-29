@@ -15,7 +15,9 @@ set smartcase                           " becomes case sensitive once you use a 
 set hlsearch                            " highlights search
 set incsearch                           " searches while typing
 set foldmethod=indent                   " fold code based on indenting level
-set foldlevel=3                         " sets foldlevel to 0, all folds closed
+set foldlevel=2                         " sets foldlevel to 2
+set foldnestmax=10
+set nofoldenable                        " folds not enabled when opening a file
 set autoread                            " updates if file on disk updates from external source
 set nocompatible                        " be iMproved, required
 filetype off                            " required

@@ -23,6 +23,7 @@ if [ $(uname -s) = 'Darwin' ]; then
   
   ## Divvy specific
   export PATH=$PATH:/Users/arlen/Library/Python/3.9/bin
+  export PATH=$HOME/.local/bin:$PATH
   alias make=mmake
   # export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain divvydose --domain-owner 120043296445 --query authorizationToken --output text`
   eval "$(pyenv init --path)"
@@ -30,6 +31,8 @@ if [ $(uname -s) = 'Darwin' ]; then
   export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
   export WORKON_HOME=$HOME/.virtualenvs
   pyenv virtualenvwrapper_lazy
+  export PIPENV_VENV_IN_PROJECT=1
+  export PIPENV_IGNORE_VIRTUALENVS=1
   ## end divvy
 
   # OSX:brew For compilers to find ruby you may need to set:
@@ -184,5 +187,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 
