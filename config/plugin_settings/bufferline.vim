@@ -3,8 +3,8 @@ set termguicolors
 " e.g. if you change the order of buffers :bnext and :bprevious will not respect the custom ordering
 nnoremap <silent>b[ :BufferLineCycleNext<CR>
 nnoremap <silent>b] :BufferLineCyclePrev<CR>
-nnoremap <silent> <leader>bc :BufferLinePickClose<CR>
-nnoremap <silent> <leader>bp :BufferLinePick<CR>
+nnoremap <silent> <Leader>bc :BufferLinePickClose<CR>
+nnoremap <silent> <Leader>bp :BufferLinePick<CR>
 
 lua << EOF
 require('bufferline').setup {

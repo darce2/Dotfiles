@@ -16,6 +16,7 @@ source ~/.config/nvim/config/plugin_settings/gitsigns.vim
 source ~/.config/nvim/config/plugin_settings/telescope.vim
 source ~/.config/nvim/config/plugin_settings/lsp.vim
 source ~/.config/nvim/config/plugin_settings/which-key.vim
+source ~/.config/nvim/config/plugin_settings/prettier.vim
 " source ~/.config/nvim/config/plugin_settings/denite.vim
 " source ~/.config/nvim/config/plugin_settings/coc.vim
 source ~/.config/nvim/config/plugin_settings/coq.vim

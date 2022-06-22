@@ -6,9 +6,9 @@
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " === ChadTree shorcuts === "
-nnoremap <leader>nn <cmd>CHADopen<cr>
+nnoremap <Leader>nn <cmd>CHADopen<cr>
 " clear quickfix list
-nnoremap <leader>nl <cmd>call setqflist([])<cr>
+nnoremap <Leader>nl <cmd>call setqflist([])<cr>
 
 let g:chadtree_settings = {
       \"options": {

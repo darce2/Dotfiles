@@ -9,8 +9,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeShowHidden=1
 
 " === Nerdtree shorcuts === "
-nmap <leader>nn :NERDTreeToggle<CR>
+nmap <Leader>nn :NERDTreeToggle<CR>
 " open current file in tree
-nmap <leader>no :NERDTreeFind<CR>
+nmap <Leader>no :NERDTreeFind<CR>
 
 

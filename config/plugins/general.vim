@@ -25,6 +25,8 @@ Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'neovim/nvim-lspconfig'
 " helper plugin to manage language servers
 Plug 'williamboman/nvim-lsp-installer'
+" formatting support
+Plug 'MunifTanjim/prettier.nvim'
 " autocompletion with lsp
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
 " 9000+ Snippets
@@ -49,6 +51,7 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 " handle references in a popup window
 " Plug 'rmagatti/goto-preview'
 " Plug 'wiliamks/nice-reference.nvim'
+
 
 " Easy commenting and uncommenting
 Plug 'preservim/nerdcommenter'
