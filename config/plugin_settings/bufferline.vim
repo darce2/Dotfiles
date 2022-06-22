@@ -4,6 +4,7 @@ set termguicolors
 nnoremap <silent>b[ :BufferLineCycleNext<CR>
 nnoremap <silent>b] :BufferLineCyclePrev<CR>
 nnoremap <silent> <leader>bc :BufferLinePickClose<CR>
+nnoremap <silent> <leader>bp :BufferLinePick<CR>
 
 lua << EOF
 require('bufferline').setup {
