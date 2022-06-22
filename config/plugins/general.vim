@@ -51,7 +51,7 @@ Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 " Plug 'wiliamks/nice-reference.nvim'
 
 " Easy commenting and uncommenting
-Plug 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
