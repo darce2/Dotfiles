@@ -33,6 +33,8 @@ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 " Need to **configure separately**
 Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 
+" tab support
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 " previously used autocomplete --------
 " Plug 'hrsh7th/cmp-nvim-lsp'
 " Plug 'hrsh7th/cmp-buffer'
