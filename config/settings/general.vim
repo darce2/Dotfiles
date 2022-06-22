@@ -19,6 +19,7 @@ set foldlevel=2                         " sets foldlevel to 2
 set foldnestmax=10
 set nofoldenable                        " folds not enabled when opening a file
 set autoread                            " updates if file on disk updates from external source
+set cmdheight=2
 set nocompatible                        " be iMproved, required
 filetype off                            " required
 
@@ -62,10 +63,10 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Autosave 
-" inoremap <esc> <esc>:w<cr>
+inoremap <esc> <esc>:w<cr>                                  " instead of closing unsave buf on file open :ls :b[N]
 
 " File exploring settings
-set hidden                                      "instead of closing unsave buf on file open :ls :b[N]
+set hidden
 set path+=**
 set path-=**/node_modules/*
 set wildmenu
@@ -84,7 +85,7 @@ set wildignore+=**/coverage/*
 " nnoremap <Leader>f#  :b#<CR>
 
 " live substitue
-" set inccommand=split
+set inccommand=split
 
 " au BufNewFile,BufRead *.vim set filetype=vim
 

@@ -45,8 +45,8 @@ Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 " ----------
 
 " handle references in a popup window
-Plug 'rmagatti/goto-preview'
-Plug 'wiliamks/nice-reference.nvim'
+" Plug 'rmagatti/goto-preview'
+" Plug 'wiliamks/nice-reference.nvim'
 
 " Easy commenting and uncommenting
 Plug 'scrooloose/nerdcommenter'
