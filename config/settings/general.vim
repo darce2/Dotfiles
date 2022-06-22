@@ -64,7 +64,7 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " Autosave 
-inoremap <esc> <esc>:w<cr>                                  " instead of closing unsave buf on file open :ls :b[N]
+" inoremap <esc> <esc>:w<cr>                                  " instead of closing unsave buf on file open :ls :b[N]
 
 " File exploring settings
 set hidden
