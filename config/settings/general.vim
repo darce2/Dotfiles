@@ -22,6 +22,7 @@ set autoread                            " updates if file on disk updates from e
 set cmdheight=2
 set nocompatible                        " be iMproved, required
 filetype off                            " required
+set mouse=a                             " used for bufferline to be able to close buffers with mouse
 
 " Delete current visual selection and dump in black hole buffer before pasting
 " Used when you want to paste over something without it getting copied to
