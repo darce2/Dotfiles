@@ -31,7 +31,7 @@ Plug 'hrsh7th/nvim-cmp'
 " " these are required for snippets
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-" ----------
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 
 " tab support
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
