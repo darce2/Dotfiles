@@ -33,11 +33,16 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 
+" testing out diagnostics
+Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+
 " tab support
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
 
 " Easy commenting and uncommenting
 Plug 'preservim/nerdcommenter'
+" surrounds!
+Plug 'kylechui/nvim-surround'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
