@@ -10,7 +10,7 @@ source ~/.config/nvim/config/settings/functions.vim
 " plugin specific settings
 source ~/.config/nvim/config/plugin_settings/bufferline.vim
 source ~/.config/nvim/config/plugin_settings/nerdCommenter.vim
-source ~/.config/nvim/config/plugin_settings/chadTree.vim
+" source ~/.config/nvim/config/plugin_settings/chadTree.vim
 source ~/.config/nvim/config/plugin_settings/gitsigns.vim
 source ~/.config/nvim/config/plugin_settings/telescope.vim
 source ~/.config/nvim/config/plugin_settings/lsp.vim

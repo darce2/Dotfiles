@@ -6,25 +6,25 @@
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " === ChadTree shorcuts === "
-nnoremap <Leader>nn <cmd>CHADopen<cr>
-" clear quickfix list
-nnoremap <Leader>nl <cmd>call setqflist([])<cr>
-
-let g:chadtree_settings = {
-      \"options": {
-        \"lang": "en",
-        \"show_hidden": v:true,
-      \},
-      \"view": {
-        \"window_options": {
-          \"cursorline": v:true,
-          \"foldenable": v:false,
-          \"number": v:false,
-          \"relativenumber": v:false,
-          \"signcolumn": "no",
-          \"winfixwidth": v:false,
-          \"wrap": v:false,
-        \},
-      \},
-    \}
+" nnoremap <Leader>nn <cmd>CHADopen<cr>
+" " clear quickfix list
+" nnoremap <Leader>nl <cmd>call setqflist([])<cr>
+"
+" let g:chadtree_settings = {
+      " \"options": {
+        " \"lang": "en",
+        " \"show_hidden": v:true,
+      " \},
+      " \"view": {
+        " \"window_options": {
+          " \"cursorline": v:true,
+          " \"foldenable": v:false,
+          " \"number": v:false,
+          " \"relativenumber": v:false,
+          " \"signcolumn": "no",
+          " \"winfixwidth": v:false,
+          " \"wrap": v:false,
+        " \},
+      " \},
+    " \}
 
