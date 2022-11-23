@@ -19,8 +19,10 @@ set foldlevel=2                         " sets foldlevel to 2
 set foldnestmax=10
 set nofoldenable                        " folds not enabled when opening a file
 set autoread                            " updates if file on disk updates from external source
-set cmdheight=2
+set cmdheight=0                         " hide command height when not in use
+set laststatus=0                        " goes along with cmdheight
 set nocompatible                        " be iMproved, required
+set spell                               " spell check only comments
 filetype off                            " required
 set mouse=a                             " used for bufferline to be able to close buffers with mouse
 
