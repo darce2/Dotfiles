@@ -61,4 +61,11 @@ vim.api.nvim_set_keymap(
   { noremap = true }
 )
 
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>gr",
+  ":Telescope lsp_references<CR>",
+  { noremap = true }
+)
+
 EOF
