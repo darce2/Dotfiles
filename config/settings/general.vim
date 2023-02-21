@@ -29,7 +29,7 @@ set mouse=a                             " used for bufferline to be able to clos
 " Delete current visual selection and dump in black hole buffer before pasting
 " Used when you want to paste over something without it getting copied to
 " Vim's default buffer
-vnoremap <leader>p "_dP                
+vnoremap <leader>p "_dP
 
 
 filetype indent on                              " Not sure what this does
@@ -65,7 +65,7 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-" Autosave 
+" Autosave
 " inoremap <esc> <esc>:w<cr>                                  " instead of closing unsave buf on file open :ls :b[N]
 
 " File exploring settings

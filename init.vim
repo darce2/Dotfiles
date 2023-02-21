@@ -16,7 +16,7 @@ source ~/.config/nvim/config/plugin_settings/telescope.vim
 source ~/.config/nvim/config/plugin_settings/lsp.vim
 source ~/.config/nvim/config/plugin_settings/which-key.vim
 source ~/.config/nvim/config/plugin_settings/prettier.vim
-source ~/.config/nvim/config/plugin_settings/airline.vim
+source ~/.config/nvim/config/plugin_settings/lualine.vim
 
 " file specific
 autocmd FileType css source ~/.config/nvim/config/settings/css.vim

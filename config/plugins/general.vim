@@ -14,9 +14,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'kyazdani42/nvim-web-devicons'
 
 " File explorer
-" Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'nvim-telescope/telescope-file-browser.nvim'
-
 
 " language server support config
 Plug 'neovim/nvim-lspconfig'
@@ -39,7 +37,7 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
 " tab support
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
 
 " Easy commenting and uncommenting
 Plug 'preservim/nerdcommenter'
@@ -47,11 +45,11 @@ Plug 'preservim/nerdcommenter'
 Plug 'kylechui/nvim-surround'
 
 " Customized vim status line
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'nvim-lualine/lualine.nvim'
 
 " a colorscheme
 Plug 'morhetz/gruvbox'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 " help to learn what actions are available
 Plug 'folke/which-key.nvim'
