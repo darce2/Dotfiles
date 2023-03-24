@@ -8,7 +8,14 @@ lua << EOF
 require('telescope').setup{
   defaults = {
     -- Default configuration for telescope goes here:
-    -- config_key = value,
+    layout_strategy = 'vertical',
+    layout_config = { 
+      prompt_position = 'top',
+      mirror = true,
+      width = 0.95,
+      height = 0.95,
+      preview_height = 0.7,
+    },
     file_ignore_patterns = {
       ".git//*"
     },
