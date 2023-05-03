@@ -11,7 +11,7 @@ Plug 'nvim-telescope/telescope.nvim'
 " needed for telescope
 Plug 'nvim-telescope/telescope-fzf-native.nvim', {'do': 'make'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-tree/nvim-web-devicons'
 
 " File explorer
 Plug 'nvim-telescope/telescope-file-browser.nvim'

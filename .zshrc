@@ -9,6 +9,9 @@ export PATH=$PATH:~/Dotfiles/functions
 export PATH=$PATH:$(ruby -e 'puts Gem.user_dir')/bin
 export GEM_HOME="$HOME/.gem"
 
+# add terraform on optum laptop
+export PATH=$PATH:/Users/adarcy1/bin
+
 # direnv set up
 eval "$(direnv hook zsh)"
 
