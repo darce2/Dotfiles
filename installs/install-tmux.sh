@@ -3,7 +3,7 @@
 if [ $(uname -s) = 'Darwin' ]; then
   brew install tmux
 else
-  echo "I stil dont have a desktop"
+  sudo pacman -S tmux
 fi
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -sf ~/Dotfiles/.tmux.conf ~/.tmux.conf
