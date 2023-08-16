@@ -25,10 +25,9 @@ if [ $(uname -s) = 'Darwin' ]; then
   export PATH="/usr/local/opt/ruby/bin:$PATH"
   
   ## Divvy specific
-  export PATH=$PATH:/Users/arlen/Library/Python/3.9/bin
+  export PATH=$PATH:/Users/adarcy1/.pyenv/shims/python
   export PATH=$HOME/.local/bin:$PATH
   alias make=mmake
-  # export CODEARTIFACT_AUTH_TOKEN=`aws codeartifact get-authorization-token --domain divvydose --domain-owner 120043296445 --query authorizationToken --output text`
   eval "$(pyenv init --path)"
   eval "$(pyenv init -)"
   export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
@@ -55,10 +54,12 @@ if [ $(uname -s) = 'Darwin' ]; then
   compinit
   plugins=(
     git
-    osx
+    macos
     npm
     tmux
     yarn
+    zsh-autosuggestions
+    history
   )
 else
   # Add Applications folder
@@ -83,6 +84,8 @@ else
     systemd
     tmux
     yarn
+    zsh-syntax-highlighting
+    history
   )
 
   ## launch sway on login, not sure if need to keep variable
@@ -154,9 +157,6 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -15,3 +15,6 @@ else
   ln -sf ~/Dotfiles/.zshrc ~/.
   chsh -s /bin/zsh
 fi
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
