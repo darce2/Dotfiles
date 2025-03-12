@@ -19,7 +19,8 @@ Plug 'nvim-telescope/telescope-file-browser.nvim'
 " language server support config
 Plug 'neovim/nvim-lspconfig'
 " helper plugin to manage language servers
-Plug 'williamboman/nvim-lsp-installer'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 " formatting support but doesn't seem to work :/
 Plug 'MunifTanjim/prettier.nvim'
 " autocompletion with lsp
@@ -33,11 +34,14 @@ Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 
+" co-pilot
+Plug 'github/copilot.vim'
+
 " testing out diagnostics
 Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 
 " tab support
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v4.*' }
 
 " Easy commenting and uncommenting
 Plug 'preservim/nerdcommenter'

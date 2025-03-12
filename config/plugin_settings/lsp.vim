@@ -1,9 +1,21 @@
 set completeopt=menu,menuone,noselect
 
 lua << EOF
-require("nvim-lsp-installer").setup {
-  -- ensure servers are always installed
-  automatic_installation = true
+require("mason").setup()
+local servers = {
+  "ts_ls",
+  "eslint",
+  "cssls",
+  "graphql",
+  "tailwindcss",
+--  "terraformls", commented until they fix it for arm64?
+  "pyright",
+  "yamlls",
+  "jsonls",
+}
+require("mason-lspconfig").setup{
+  ensure_installed = servers,
+  automatic_installation = true,
 }
 local lspconfig = require('lspconfig')
 
@@ -14,6 +26,10 @@ local opts = { noremap=true, silent=true }
 -- vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 -- vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 -- vim.api.nvim_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+
+-- github copilot co-pilot
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -135,17 +151,6 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = {
-  "tsserver",
-  "eslint",
-  "cssls",
-  "graphql",
-  "tailwindcss",
---  "terraformls", commented until they fix it for arm64?
-  "pyright",
-  "yamlls",
-  "jsonls",
-}
 
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
