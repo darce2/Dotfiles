@@ -44,17 +44,17 @@ map("n", "<C-l>", "<C-w><C-l>", opts)
 map("n", "<C-h>", "<C-w><C-h>", opts)
 
 local function clean_buffer()
-  local saved_search = vim.fn.getreg("/")
   local cursor = vim.api.nvim_win_get_cursor(0)
+  local lines = vim.api.nvim_buf_get_lines(0, 0, -1, false)
 
-  vim.cmd([[%s/\t/  /ge]])
-  vim.cmd([[%s/\s\+$//e]])
-  vim.cmd([[%s/{\(\.\{-}\)}/{ \1 }/ge]])
-  vim.cmd([[%s/{  \(\.\{-}\)}/{ \1}/ge]])
-  vim.cmd([[%s/{\(\.\{-}\)  }/{\1 }/ge]])
-  vim.cmd([[%s/{ }/{}/ge]])
+  for index, line in ipairs(lines) do
+    line = line:gsub("\t", "  "):gsub("%s+$", "")
+    line = line:gsub("{%s*(.-)%s*}", "{ %1 }"):gsub("{%s*}", "{}")
+    lines[index] = line
+  end
 
-  vim.fn.setreg("/", saved_search)
+  vim.api.nvim_buf_set_lines(0, 0, -1, false, lines)
+  cursor[2] = math.min(cursor[2], #lines[cursor[1]])
   vim.api.nvim_win_set_cursor(0, cursor)
   vim.bo.fileformat = "unix"
 end

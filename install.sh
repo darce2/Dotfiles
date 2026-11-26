@@ -129,6 +129,14 @@ ensure_homebrew() {
 
 install_macos_packages() {
   ensure_homebrew
+
+  # Homebrew Bundle cannot adopt a manually installed app when its version
+  # differs from the cask. Replace an unmanaged Kitty with the Brewfile version.
+  if [[ -d /Applications/kitty.app ]] && ! brew list --cask --versions kitty >/dev/null 2>&1; then
+    rm -rf /Applications/kitty.app
+    info "Removed the unmanaged Kitty app before installing the Brewfile version."
+  fi
+
   info "Installing macOS packages from Brewfile."
   brew bundle --file "$DOTFILES_DIR/Brewfile"
 }
@@ -160,6 +168,8 @@ install_arch_packages() {
 }
 
 install_fnm_and_node() {
+  local global_packages=()
+
   if ! command -v fnm >/dev/null 2>&1; then
     if [[ "$PLATFORM" == "Darwin" ]]; then
       fail "fnm was not installed by Homebrew."
@@ -177,7 +187,12 @@ install_fnm_and_node() {
   fnm install --lts --use
   fnm default "$(fnm current)"
   eval "$(fnm env --shell bash)"
-  npm install --global yarn livedown
+
+  command -v yarn >/dev/null 2>&1 || global_packages+=(yarn)
+  command -v livedown >/dev/null 2>&1 || global_packages+=(livedown)
+  if ((${#global_packages[@]} > 0)); then
+    npm install --global "${global_packages[@]}"
+  fi
 }
 
 install_oh_my_zsh() {
@@ -278,7 +293,9 @@ setup_links() {
 }
 
 set_default_shell() {
-  [[ "$PLATFORM" == "Linux" ]] || return
+  if [[ "$PLATFORM" != "Linux" ]]; then
+    return 0
+  fi
 
   local zsh_path
   zsh_path="$(command -v zsh)"
@@ -338,7 +355,6 @@ if [[ "$PLATFORM" == "Darwin" ]]; then
   cat <<'EOF'
 macOS follow-up:
   - Grant Hammerspoon Accessibility access in System Settings > Privacy & Security > Accessibility.
-  - Open Karabiner-Elements and follow its prompts for Accessibility, Input Monitoring, background services, and DriverKit.
   - Restart Hammerspoon after granting Accessibility access.
 EOF
 fi
