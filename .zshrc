@@ -1,193 +1,73 @@
-# Remove username from prompt
-export DEFAULT_USER=$USER`prompt_context(){}`
+# Remove the username from the prompt and suppress Oh My Zsh's context segment.
+export DEFAULT_USER="$USER"
+prompt_context() {}
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:~/Dotfiles/functions
-
-# Add ruby 
-export PATH=$PATH:$(ruby -e 'puts Gem.user_dir')/bin
-export GEM_HOME="$HOME/.gem"
-
-# add terraform on optum laptop
-export PATH=$PATH:/Users/adarcy1/bin
-
-# direnv set up
-eval "$(direnv hook zsh)"
-
-# fnm manage node versions
-export PATH=/home/arlen/.fnm:$PATH
-eval "`fnm env`"
-eval "$(fnm env --use-on-cd)"
-
-if [ $(uname -s) = 'Darwin' ]; then
-  # OSX:brew If you need to have ruby first in your PATH, run:
-  export PATH="/usr/local/opt/ruby/bin:$PATH"
-  
-  ## Divvy specific
-  export PATH=$PATH:/Users/adarcy1/.pyenv/shims/python
-  export PATH=$HOME/.local/bin:$PATH
-  alias make=mmake
-  eval "$(pyenv init --path)"
-  eval "$(pyenv init -)"
-  export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
-  export WORKON_HOME=$HOME/.virtualenvs
-  pyenv virtualenvwrapper_lazy
-  export PIPENV_VENV_IN_PROJECT=1
-  export PIPENV_IGNORE_VIRTUALENVS=1
-  ## end divvy
-
-  # OSX:brew For compilers to find ruby you may need to set:
-  export LDFLAGS="-L/usr/local/opt/ruby/lib"
-  export CPPFLAGS="-I/usr/local/opt/ruby/include"
-
-  # OSX:brew For pkg-config to find ruby you may need to set:
-  export PKG_CONFIG_PATH="/usr/local/opt/ruby/lib/pkgconfig"
-
-  # Add Applications folder
-  export PATH=$PATH:/Users/arlen/Applications
-
-  # Path to your oh-my-zsh installation.
-  export ZSH="/Users/${USER}/.oh-my-zsh"
-
-  autoload -Uz compinit
-  compinit
-  plugins=(
-    git
-    macos
-    npm
-    tmux
-    yarn
-    zsh-autosuggestions
-    history
-  )
-else
-  # Add Applications folder
-  export PATH=$PATH:/home/arlen/Applications
-
-  # Path to your oh-my-zsh installation.
-  export ZSH="/home/${USER}/.oh-my-zsh"
-  # End of lines configured by zsh-newuser-install
-  # The following lines were added by compinstall
-  zstyle :compinstall filename '/home/arlen/.zshrc'
-
-  autoload -Uz compinit
-  compinit
-  # End of lines added by compinstall
-  #
-  export SUDO_EDITOR=nvim
-  plugins=(
-    git
-    archlinux
-    npm
-    python
-    systemd
-    tmux
-    yarn
-    zsh-syntax-highlighting
-    history
-  )
-
-  ## launch sway on login, not sure if need to keep variable
-  if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-          XKB_DEFAULT_LAYOUT=us exec sway
-  fi
+# Initialize Homebrew on Apple Silicon and Intel Macs.
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x /usr/local/bin/brew ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
 fi
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+
+export PATH="$HOME/Dotfiles/functions:$HOME/Applications:$PATH"
+export GEM_HOME="$HOME/.gem"
+if command -v ruby >/dev/null 2>&1; then
+  export PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
+if command -v direnv >/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
+
+# fnm is installed by Homebrew on macOS and in ~/.local/share on Arch Linux.
+for fnm_dir in "$HOME/.local/share/fnm" "$HOME/.fnm"; do
+  if [[ -d "$fnm_dir" ]]; then
+    export PATH="$fnm_dir:$PATH"
+    break
+  fi
+done
+if command -v fnm >/dev/null 2>&1; then
+  eval "$(fnm env --use-on-cd --shell zsh)"
+fi
+
+# uv installs user tools here.
+export PATH="$HOME/.local/bin:$PATH"
+export EDITOR=nvim
+
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="agnoster"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE="$HOME/.histfile"
 HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory autocd extendedglob nomatch notify
 bindkey -v
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
+plugins=(
+  git
+  npm
+  tmux
+  yarn
+  history
+)
 
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  plugins+=(macos)
+else
+  export SUDO_EDITOR=nvim
+  plugins+=(archlinux python systemd)
 
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+  if [[ -z "$DISPLAY" && "$(tty 2>/dev/null)" == "/dev/tty1" ]] && command -v sway >/dev/null 2>&1; then
+    XKB_DEFAULT_LAYOUT=us exec sway
+  fi
+fi
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+# Keep syntax highlighting last so it can wrap the key bindings from other plugins.
+plugins+=(zsh-autosuggestions zsh-syntax-highlighting)
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+source "$ZSH/oh-my-zsh.sh"
+bindkey '^k' autosuggest-accept
 
-source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
+if [[ -f "$HOME/.local/bin/env" ]]; then
+  source "$HOME/.local/bin/env"
+fi
