@@ -1,3 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-brew cask install shiftit
+# Compatibility entry point; setup is maintained in the root installer.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec "$SCRIPT_DIR/../install.sh" "$@"

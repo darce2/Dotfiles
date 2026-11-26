@@ -97,7 +97,7 @@
   },
   "Custom Command" : "No",
   "ASCII Anti Aliased" : true,
-  "Non Ascii Font" : "RobotoMonoForPowerline-Light 16",
+  "Non Ascii Font" : "SauceCodePro Nerd Font Mono 16",
   "Vertical Spacing" : 1,
   "Use Bold Font" : false,
   "Option Key Sends" : 0,
@@ -351,7 +351,7 @@
     "Red Component" : "0.02352941",
     "Blue Component" : "0.6039215999999999"
   },
-  "Normal Font" : "RobotoMonoForPowerline-Light 16",
+  "Normal Font" : "SauceCodePro Nerd Font Mono 16",
   "Custom Directory" : "No",
   "Ansi 0 Color" : {
     "Green Component" : "0",

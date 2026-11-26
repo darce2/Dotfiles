@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-# git clone https://github.com/powerline/fonts.git --depth=1
-git clone https://github.com/ryanoasis/nerd-fonts.git --depth=1 ~/fonts
-cd ~/fonts
-./install.sh SourceCodePro
-rm -rf ~/fonts
+# Compatibility entry point; the root installer installs the shared Nerd Font.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec "$SCRIPT_DIR/../install.sh" "$@"

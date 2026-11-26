@@ -1,8 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -Eeuo pipefail
 
-mkdir -p ~/tmp/kb
-brew install boost
-brew install cmake
-git clone --depth 1 https://github.com/tekezo/Karabiner-Elements.git ~/tmp/kb
-cd ~/tmp/kb
-make
+# Compatibility entry point; setup is maintained in the root installer.
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+exec "$SCRIPT_DIR/../install.sh" "$@"
